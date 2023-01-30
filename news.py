@@ -2,7 +2,7 @@ import streamlit as st
 import requests, sys, time
 import datetime as dt
 
-APIkey = '3ed9270acf534281821fe9985def3f2b'
+APIkey = 'REDACTED'
 
 time = dt.datetime.today().strftime("%I:%M:%S%p, %d-%m-%Y")
 st.title(f"""Top news headlines at the moment.""")
@@ -50,11 +50,7 @@ for key, value in params.items():
 url += 'apiKey=' + APIkey
 
 response = requests.get(url)
-print(response.status_code)
-
 data = response.json()
-
-print(data['status'])
 
 if data['status'] == 'error':
     print('Error: ' + data['message'])
@@ -64,7 +60,6 @@ nResults = data['totalResults']
 results = data['articles']
 
 print("Found " + str(nResults) + " results")
-#print(results[0].keys())
 
 # Visualize the news function
 
