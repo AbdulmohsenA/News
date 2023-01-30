@@ -18,3 +18,10 @@ pip install requirements.txt
 ```ps
 streamlit run news.py
 ```
+
+## Output
+![image](https://user-images.githubusercontent.com/92435992/215557726-9b7e5d4c-3f11-44db-90b1-9200800d766e.png)
+
+
+---
+I made this program proceeding the Russian invasion to have an easy access to world news. Though the script was designed to run only on my PC. After some refactoring i generalized it.
