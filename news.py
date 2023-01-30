@@ -2,6 +2,7 @@ import streamlit as st
 import requests, sys, time
 import datetime as dt
 
+# Put your API Key here.
 APIkey = 'REDACTED'
 
 time = dt.datetime.today().strftime("%I:%M:%S%p, %d-%m-%Y")
@@ -64,16 +65,16 @@ print("Found " + str(nResults) + " results")
 # Visualize the news function
 
 def show_news(results):
-    for i in range(len(results)):
+    for new in results:
 
         try:
-            st.image(results[i]['urlToImage'])
+            st.image(new['urlToImage'])
         except Exception:
             st.write("No image found")
-        st.write("### " + results[i]['title'])
-        st.write(results[i]['description'])
-        st.write(results[i]['url'])
-        st.write(f"\nBy {results[i]['author']} - {results[i]['source']['name']} at {results[i]['publishedAt']}\n")
+        st.write("### " + new['title'])
+        st.write(new['description'])
+        st.write(new['url'])
+        st.write(f"\nBy {new['author']} - {new['source']['name']} at {new['publishedAt']}\n")
         st.write("\n" + "---" + "\n")
 
 show_news(results)
